@@ -3,6 +3,7 @@ package webService2.springboot.domain.posts;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import webService2.springboot.domain.BaseTimeEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,7 +14,7 @@ import javax.persistence.Id;
 @Getter             //  클래스 내 모든 필드의 Getter메소드를 자동생성
 @NoArgsConstructor  //  기본 생성자 자동 추가
 @Entity             //  테이블과 링크될 클래스임을 나타낸다.
-public class Posts {
+public class Posts extends BaseTimeEntity {
     @Id // 해당테이블의 PK를 타나낸다. GenerationType.IDENTITY를 함으로써 auto imcrement가 된다.
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
